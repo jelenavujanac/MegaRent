@@ -66,27 +66,26 @@ h3 {
 #catalog {
     background: $grey_bkg;
     text-align: center;
-    white-space: nowrap;
-
-    div {
-        width: 25%;
-        display: inline-block;
-        margin: 0 auto;
-        white-space: normal;
-        img {
-            width: 85%;
-        }
+    .container {
+        width: 100%;
+        white-space: nowrap;
+            div {
+            width: 25%;
+            display: inline-block;
+            white-space: normal;
+                img { width: 85%; }
+            }
     }
 }
 button { 
-            margin: .5em auto;
-            padding: .5em 2em;
-            background-color: $main_red;
-            color: white;
-            text-transform: uppercase;
-            border-style: none;
-            cursor: pointer;
-        }
+    margin: .5em auto;
+    padding: .5em 2em;
+    background-color: $main_red;
+    color: white;
+    text-transform: uppercase;
+    border-style: none;
+    cursor: pointer;
+}
 
 #pricing {
     text-align: center;
@@ -142,7 +141,13 @@ button {
 @include tablet {
     header, section {padding: 2em;}
     #catalog {
-        div { width: 50%;}
+        .container { 
+            white-space: normal;
+            div { width: 48%;}
+        }
+    }
+    button {
+        margin-bottom: 2em;
     }
     #contact {
         text-align: center;

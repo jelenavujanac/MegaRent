@@ -56,15 +56,16 @@ h3 {
 
 #catalog {
   background: #f0f0f0;
-  text-align: center;
-  white-space: nowrap; }
-  #catalog div {
-    width: 25%;
-    display: inline-block;
-    margin: 0 auto;
-    white-space: normal; }
-    #catalog div img {
-      width: 85%; }
+  text-align: center; }
+  #catalog .container {
+    width: 100%;
+    white-space: nowrap; }
+    #catalog .container div {
+      width: 25%;
+      display: inline-block;
+      white-space: normal; }
+      #catalog .container div img {
+        width: 85%; }
 
 button {
   margin: .5em auto;
@@ -125,8 +126,13 @@ button {
   header, section {
     padding: 2em; }
 
-  #catalog div {
-    width: 50%; }
+  #catalog .container {
+    white-space: normal; }
+    #catalog .container div {
+      width: 48%; }
+
+  button {
+    margin-bottom: 2em; }
 
   #contact {
     text-align: center; }
