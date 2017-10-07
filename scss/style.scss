@@ -1,0 +1,186 @@
+@import 'mixins';
+@import 'vars';
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway:700');
+
+@include main;
+
+header, section { @include autosize }
+
+header {
+    background-image: url(../slike/background.jpg);
+   // background-size: cover;
+    background-position: top center;
+    height: 50em;
+     nav {
+        width: 100%;
+        background: white;
+        height: 3em;
+                    
+         .logo {
+        float: left;
+        font-family: $logo_font;
+        font-size: 2em;
+        font-weight: 700;
+        padding-left: .5em;
+        span { color: $main_red; }
+        }
+         
+        ul {
+            list-style: none;
+            float: right;
+            padding: 1em;
+
+            li {
+                display: inline-block;
+                text-transform: uppercase;
+                padding-right: 1em;
+                a {
+                    text-decoration: none;
+                    &:hover {
+                        color: $grey_bkg;
+                    }
+                }
+            }
+        }
+    }
+    h1, h2 {
+        color: white;
+        font-weight: 400;
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+        }
+    h1 {
+        margin-top: 10em;
+        border-bottom: 1px solid $main_red;
+    }
+}
+
+h3 {
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 5em;
+    font-weight: 700;
+}
+#catalog {
+    background: $grey_bkg;
+    text-align: center;
+    white-space: nowrap;
+
+    div {
+        width: 25%;
+        display: inline-block;
+        margin: 0 auto;
+        white-space: normal;
+        img {
+            width: 85%;
+        }
+    }
+}
+button { 
+            margin: .5em auto;
+            padding: .5em 2em;
+            background-color: $main_red;
+            color: white;
+            text-transform: uppercase;
+            border-style: none;
+            cursor: pointer;
+        }
+
+#pricing {
+    text-align: center;
+    button {display: none;}
+    table {
+        width: 80%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        td, th {
+            padding: 1em 4em;
+        }
+        th {
+            background-color: $main_red;
+            color: white;
+            font-weight: 700;
+            &:first-child {
+            background-color: $dark_red;
+            }
+        }
+        tbody tr {
+            border-bottom: 1px solid $main_text_color;
+            td:first-child {
+                background-color: $grey_bkg;
+                font-weight: 700;
+            }
+            td:hover {
+                background-color: $grey_bkg; 
+            }
+        }
+    }
+}
+
+#contact {
+    background-color: black;
+    @include clearfix;
+    div {
+        border-bottom: 1px solid $main_red;
+        font-size: 1.5em;
+        span { color: $main_red; }
+    }
+    p, iframe {padding: 1em;}
+    p {
+        float: left;
+        font-style: italic;
+        font-size: 0.8em;
+        color: $grey_bkg;
+    }
+    iframe { float: right;}
+}
+
+
+// TABLET 
+@include tablet {
+    header, section {padding: 2em;}
+    #catalog {
+        div { width: 50%;}
+    }
+    #contact {
+        text-align: center;
+        p {float: none;}
+        iframe {float: none;}
+    }
+}
+
+//MOBILE
+@include mobile {
+    header, section {padding: 2em 0;}
+    header {
+        background: black;  
+        height: auto;
+        nav {
+           height: auto;
+            .logo {float: none; }
+                ul {
+                  float: none;
+                    li {
+                        text-align: center;
+                        display: list-item;
+                        padding: 1em;
+                    }
+                }
+            }
+         h1 { margin-top: 2em;}
+    }
+    
+    #catalog div {width: 100%;}
+    button { 
+        padding: 2em 4em;
+        margin-bottom: 2em;
+    }
+    #pricing { 
+        table {display: none;}
+        button {display: block;}
+    }
+}
+
+   

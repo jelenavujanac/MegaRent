@@ -1,0 +1,33 @@
+@mixin main {
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: $main_font;
+		color: $main_text_color;
+	}
+}
+@mixin autosize {
+    width: 100%;
+    padding: 2em 10em;}
+
+@mixin clearfix {
+	&:before, &:after {
+		content: "";
+	    display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+@mixin tablet {
+	@media screen and (max-width: $big_break) {
+		@content;
+	}
+}
+@mixin mobile {
+	@media screen and (max-width: $small_break) {
+		@content;
+	}
+}
